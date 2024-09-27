@@ -1,0 +1,119 @@
+[33mcommit f31d41881825c087e6f54710370510976d5a426e[m[33m ([m[1;36mHEAD -> [m[1;32madd-screen-navigation[m[33m)[m
+Author: will-elsen <willtelsen@gmail.com>
+Date:   Thu Sep 26 13:16:46 2024 -0400
+
+    added AppNavigation.tsx, which implements ReactNavigate
+
+[33mcommit 3b88cf8d69b12c2f054ddc40f3c7dcead58efa44[m[33m ([m[1;31morigin/add-home-screen[m[33m, [m[1;32madd-home-screen[m[33m)[m
+Author: will-elsen <willtelsen@gmail.com>
+Date:   Thu Sep 26 13:02:19 2024 -0400
+
+    added home screen and created a prototype screen to navigate to from the home screen, which will contain all of the maps the user has made.
+
+[33mcommit 5599748f31dd19fa5ef0fc334982811ed81f9e29[m
+Author: will-elsen <willtelsen@gmail.com>
+Date:   Thu Sep 26 12:33:25 2024 -0400
+
+    created expo go project
+
+[33mcommit cae7fe9d4a4e1d95dee2ad539acdaf664b584368[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Merge: f4a34a2 e0b3aa2
+Author: Will Elsen <134634693+will-elsen@users.noreply.github.com>
+Date:   Wed Sep 25 14:20:39 2024 -0400
+
+    Merge pull request #4 from calvin-cs262-fall2024-teamJ/nathan-p-schultz-patch-1
+    
+    Update README.md
+
+[33mcommit f4a34a24a7ea19b685cacf90a7aa83055ba9b578[m
+Merge: cd2e134 a66507d
+Author: ChaseVelloney <112497022+ChaseVelloney@users.noreply.github.com>
+Date:   Tue Sep 24 18:36:31 2024 -0400
+
+    Merge pull request #6 from calvin-cs262-fall2024-teamJ/temp/ChaseVelloney
+    
+    adding chasevelloney.txt
+
+[33mcommit a66507d604a40b3c60235484c832237779002ecc[m[33m ([m[1;31morigin/temp/ChaseVelloney[m[33m)[m
+Author: ChaseVelloney <crv37@calvin.edu>
+Date:   Tue Sep 24 18:30:05 2024 -0400
+
+    adding chasevelloney.txt
+
+[33mcommit cd2e134c1449f183199fbc603d38561991dafdc5[m
+Merge: 2dd60ae 3e881b5
+Author: Noro Dung <102401992+Norodung@users.noreply.github.com>
+Date:   Sun Sep 22 16:26:44 2024 -0400
+
+    Merge pull request #5 from calvin-cs262-fall2024-teamJ/norodung
+    
+    Not a Vegetable
+
+[33mcommit 3e881b5c3d29d829bc16751702110aabbc044658[m[33m ([m[1;31morigin/norodung[m[33m)[m
+Author: Noro Dung <norodung@gmail.com>
+Date:   Sun Sep 22 16:21:07 2024 -0400
+
+    Not a Vegetable
+
+[33mcommit e0b3aa252a0027aa25dd61ac8e943249b7029b94[m[33m ([m[1;31morigin/nathan-p-schultz-patch-1[m[33m)[m
+Author: nathan-p-schultz <156809489+nathan-p-schultz@users.noreply.github.com>
+Date:   Sun Sep 22 15:15:18 2024 -0400
+
+    Update README.md
+
+[33mcommit 2dd60ae34568e4f4961112fd7ea996ccc0ad3926[m
+Merge: 16c3abb 92cdb13
+Author: Luke de Vries <139503533+luke-dvries@users.noreply.github.com>
+Date:   Sat Sep 21 21:50:09 2024 -0400
+
+    Merge pull request #3 from calvin-cs262-fall2024-teamJ/temp/luke-dvries
+    
+    added my txt file
+
+[33mcommit 92cdb134c91ca52360cc035ccc7eb4443e0dd035[m
+Author: luke-dvries <lukedvsp@gmail.com>
+Date:   Sat Sep 21 21:47:14 2024 -0400
+
+    added my txt file
+
+[33mcommit 16c3abb43a8f8608dbdcff4a9b4dfb96335a7c9b[m
+Merge: 42a3946 21d8d59
+Author: nathan-p-schultz <156809489+nathan-p-schultz@users.noreply.github.com>
+Date:   Sat Sep 21 12:18:05 2024 -0400
+
+    Merge pull request #2 from calvin-cs262-fall2024-teamJ/temp/will-elsen
+    
+    commit of trash file
+
+[33mcommit 42a3946421f578b6d84aa61b2aa9b3dcde033420[m
+Merge: 1fbf7da d6ed842
+Author: Will Elsen <134634693+will-elsen@users.noreply.github.com>
+Date:   Sat Sep 21 12:17:54 2024 -0400
+
+    Merge pull request #1 from calvin-cs262-fall2024-teamJ/temp/nathan-p-schultz
+    
+    Nathan's Opinion on DnD
+
+[33mcommit 21d8d59a93c26c35e7c74ab10c8fc344f5736e23[m[33m ([m[1;31morigin/temp/will-elsen[m[33m)[m
+Author: Will Elsen <wte3@calvin.edu>
+Date:   Sat Sep 21 12:10:40 2024 -0400
+
+    commit of trash file
+
+[33mcommit d6ed842d923f3f3eec8ecc19d6638dff54d085a3[m[33m ([m[1;31morigin/temp/nathan-p-schultz[m[33m)[m
+Author: Nathan Schultz <nps9@calvin.edu>
+Date:   Sat Sep 21 11:59:59 2024 -0400
+
+    First text file contribution
+
+[33mcommit 1fbf7daf1e7a1ac02d49df7444405f7aa0f70718[m
+Author: nathan-p-schultz <156809489+nathan-p-schultz@users.noreply.github.com>
+Date:   Fri Sep 20 16:16:39 2024 -0400
+
+    Vision Statement and Team Members
+
+[33mcommit b5ace5c0cd2ae324980c532f4a27d909e429463f[m
+Author: Will Elsen <134634693+will-elsen@users.noreply.github.com>
+Date:   Fri Sep 20 16:04:26 2024 -0400
+
+    Create README.md
