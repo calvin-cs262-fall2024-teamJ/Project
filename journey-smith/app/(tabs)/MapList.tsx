@@ -24,9 +24,11 @@ const MapList = () => {
           style={styles.profileImage}
         />
       </Pressable>
-      {selectedImage && (
-        <Image source={{ uri: selectedImage }} style={styles.uploadedImage} />
-      )}
+      <Pressable>
+        {selectedImage && (
+          <Image source={{ uri: selectedImage }} style={styles.uploadedImage} />
+        )}
+      </Pressable>
     </View>
   );
 };
@@ -62,8 +64,8 @@ const styles = StyleSheet.create({
     borderColor: '#rgba(0, 0, 0, .8)',
     borderRadius: 20,
     position: 'absolute',
-    top: 20,
-    left: 240,
+    top: -443,
+    left: -700,
   },
 });
 
