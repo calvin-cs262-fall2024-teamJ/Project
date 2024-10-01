@@ -2,7 +2,7 @@ import React from 'react';
 import { ImageBackground, View, Text, Pressable, StyleSheet } from 'react-native';
 
 
-function HomeScreen() {
+function HomeScreen({ navigation }) {
   return (
     <ImageBackground
       source={require('./assets/home-screen-map.jpg')}
@@ -11,7 +11,7 @@ function HomeScreen() {
       <View style={styles.overlay}>
         <Text style={styles.welcomeText}>Welcome to Journeysmith!</Text>
       </View>
-        <Pressable style={styles.button}>
+        <Pressable style={styles.button} onPress={() => navigation.navigate("MapList")}>
           <Text style={styles.buttonText}>Go to Map List</Text>
         </Pressable>
     </ImageBackground>

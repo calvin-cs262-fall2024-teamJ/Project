@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { View, Text, Image, StyleSheet, Pressable } from 'react-native';
+import * as ImagePicker from 'expo-image-picker';
 
 
 const MapList = () => {
@@ -10,7 +11,7 @@ const MapList = () => {
     const result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.Images,
       allowsEditing: false,
-      quality: .5,
+      quality: 1,
     });
 
 
@@ -20,9 +21,9 @@ const MapList = () => {
   }
   return (
     <View style={styles.container}>
-      <Pressable style={styles.topRightButton} onPress={pickImage}>
+      <Pressable style={styles.topLeftButtonr} onPress={pickImage}>
         <Image
-          source={require('@/assets/add-map-button.png')}
+          source={require('./assets/add-map-button.png')}
           style={styles.profileImage}
         />
       </Pressable>
@@ -43,7 +44,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#rgba(50, 50, 50, 1)',
   },
-  topRightButton: {
+  topLeftButton: {
     position: 'absolute',
     top: 20,
     left: 20,
@@ -67,7 +68,7 @@ const styles = StyleSheet.create({
     borderColor: '#rgba(0, 0, 0, .8)',
     borderRadius: 20,
     position: 'absolute',
-    top: -443,
+    top: -447,
     left: -700,
   },
 });
