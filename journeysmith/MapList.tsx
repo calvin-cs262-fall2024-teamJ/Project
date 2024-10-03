@@ -21,7 +21,7 @@ const MapList = () => {
   }
   return (
     <View style={styles.container}>
-      <Pressable style={styles.topLeftButtonr} onPress={pickImage}>
+      <Pressable style={styles.topLeftButton} onPress={pickImage}>
         <Image
           source={require('./assets/add-map-button.png')}
           style={styles.profileImage}
