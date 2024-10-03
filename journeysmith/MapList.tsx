@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { View, Text, Image, StyleSheet, Pressable } from 'react-native';
+import { View, Text, Image, StyleSheet, Pressable, Button, registerCallableModule } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 
 
-const MapList = () => {
+function MapList({ navigation }) {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-
 
   const pickImage = async () => {
     const result = await ImagePicker.launchImageLibraryAsync({
@@ -31,6 +30,9 @@ const MapList = () => {
         {selectedImage && (
           <Image source={{ uri: selectedImage }} style={styles.uploadedImage} />
         )}
+      </Pressable>
+      <Pressable style={styles.returnButton} onPress = {() => navigation.goBack()}>
+        <Text style={styles.returnButtonText}>Return to home screen</Text>
       </Pressable>
     </View>
   );
@@ -60,6 +62,19 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginBottom: 10,
   },
+  returnButton: {
+    marginTop: 20,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    backgroundColor: '#rgba(0, 0, 0, .8)',
+    borderRadius: 5,
+  },
+  returnButtonText: {
+    color: 'white',
+    fontSize: 18,
+    fontWeight: 'bold',
+    flexShrink: 1, // Ensure text fits on one line
+  },
   uploadedImage: {
     width: 200,
     height: 200,
@@ -68,7 +83,7 @@ const styles = StyleSheet.create({
     borderColor: '#rgba(0, 0, 0, .8)',
     borderRadius: 20,
     position: 'absolute',
-    top: -447,
+    top: -437,
     left: -700,
   },
 });
