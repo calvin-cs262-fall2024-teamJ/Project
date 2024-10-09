@@ -71,12 +71,12 @@ const styles = StyleSheet.create({
   activeOverlay: {
     ...StyleSheet.absoluteFillObject,
     zIndex: 20,
-    pointerEvents: 'box-none', // Allow interactions with both overlay and underlying buttons in active modes
+    pointerEvents: 'box-none', 
   },
   draggingOverlay: {
     ...StyleSheet.absoluteFillObject,
     zIndex: 20,
-    pointerEvents: 'auto', // Ensure interactions with pins during drag mode
+    pointerEvents: 'auto',
   },
   touchArea: {
     ...StyleSheet.absoluteFillObject,
