@@ -4,15 +4,15 @@ import DraggablePin from './DraggablePin';
 
 const PinOverlay = ({ children }) => {
   const [pins, setPins] = useState([]);
-  const [mode, setMode] = useState('inactive'); // 'inactive', 'normal', 'place', 'drag'
+  const [mode, setMode] = useState('inactive'); // 'inactive', 'normal', 'place', 'drag' 
 
   useEffect(() => {
-    const handleKeyPress = (e) => {
-      if (e.key === 'a') {
+    const handleKeyPress = (event) => {
+      if (event.key === 'a') {
         setMode((prevMode) => (prevMode === 'inactive' ? 'normal' : 'inactive'));
-      } else if (e.key === 'p') {
+      } else if (event.key === 'p') {
         setMode((prevMode) => (prevMode === 'place' ? 'normal' : 'place'));
-      } else if (e.key === 'm') {
+      } else if (event.key === 'm') {
         setMode((prevMode) => (prevMode === 'drag' ? 'normal' : 'drag'));
       }
     };
@@ -24,9 +24,9 @@ const PinOverlay = ({ children }) => {
     };
   }, []);
 
-  const handlePress = (e) => {
+  const handlePress = (event) => {
     if (mode !== 'place') return;
-    const { pageX, pageY } = e.nativeEvent;
+    const { pageX, pageY } = event.nativeEvent;
     setPins([...pins, { x: pageX, y: pageY }]);
   };
 
