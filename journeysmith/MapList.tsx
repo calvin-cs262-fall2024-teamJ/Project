@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
-import { View, Text, Image, StyleSheet, Pressable, Button, registerCallableModule } from 'react-native';
+import { View, Text, Image, StyleSheet, Pressable } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
+import { useNavigation, NavigationProp } from '@react-navigation/native';
 
+//Define RootStackParamList
+type RootStackParamList = {
+  Home: undefined;
+  MapList: undefined;
+  MapScreen: { imageUri: string };
+};
 
-function MapList({ navigation }) {
+function MapList() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const navigation = useNavigation<NavigationProp<RootStackParamList>>();
 
   const pickImage = async () => {
     const result = await ImagePicker.launchImageLibraryAsync({
@@ -13,11 +21,11 @@ function MapList({ navigation }) {
       quality: 1,
     });
 
-
     if (!result.canceled) {
       setSelectedImage(result.assets[0].uri);
     }
-  }
+  };
+
   return (
     <View style={styles.container}>
       <Pressable style={styles.topLeftButton} onPress={pickImage}>
@@ -28,16 +36,17 @@ function MapList({ navigation }) {
       </Pressable>
       <Pressable>
         {selectedImage && (
+          <Pressable onPress={() => navigation.navigate('MapScreen', {imageUri: selectedImage})}>
           <Image source={{ uri: selectedImage }} style={styles.uploadedImage} />
+          </Pressable>
         )}
       </Pressable>
-      <Pressable style={styles.returnButton} onPress = {() => navigation.goBack()}>
+      <Pressable style={styles.returnButton} onPress={() => navigation.goBack()}>
         <Text style={styles.returnButtonText}>Return to home screen</Text>
       </Pressable>
     </View>
   );
-};
-
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -48,45 +57,25 @@ const styles = StyleSheet.create({
   },
   topLeftButton: {
     position: 'absolute',
-    top: 20,
-    left: 20,
+    top: 10,
+    left: 10,
   },
   profileImage: {
-    width: 200,
-    height: 200,
-    marginBottom: 20,
-    opacity: 0.8,
-  },
-  name: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 10,
-  },
-  returnButton: {
-    marginTop: 20,
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    backgroundColor: '#rgba(0, 0, 0, .8)',
-    borderRadius: 5,
-  },
-  returnButtonText: {
-    color: 'white',
-    fontSize: 18,
-    fontWeight: 'bold',
-    flexShrink: 1, // Ensure text fits on one line
+    width: 50,
+    height: 50,
   },
   uploadedImage: {
     width: 200,
     height: 200,
-    marginBottom: 20,
-    borderWidth: 16,
-    borderColor: '#rgba(0, 0, 0, .8)',
-    borderRadius: 20,
-    position: 'absolute',
-    top: -437,
-    left: -700,
+  },
+  returnButton: {
+    marginTop: 20,
+    padding: 10,
+    backgroundColor: '#fff',
+  },
+  returnButtonText: {
+    color: '#000',
   },
 });
-
 
 export default MapList;

@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View } from 'react-native';
 import HomeScreen from './HomeScreen';
 import MapList from './MapList';
+import MapScreen from './MapScreen';
 import PinOverlay from './PinOverlay';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -14,6 +15,7 @@ const App = () => {
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
         <Stack.Screen name="MapList" component={MapListWithOverlay} options={{ headerShown: false }} />
+        <Stack.Screen name="MapScreen" component={MapScreen} options={{ headerShown: false }} />
       </Stack.Navigator>
       <StatusBar style="auto" />
     </NavigationContainer>
