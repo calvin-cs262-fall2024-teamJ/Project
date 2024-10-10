@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Image, StyleSheet, Pressable, Text} from 'react-native';
+import {View, Image, StyleSheet, Pressable, Text, Dimensions, ImageBackground} from 'react-native';
 import {useRoute, RouteProp, useNavigation, NavigationProp} from '@react-navigation/native';
 
 type RouteParams={
@@ -13,6 +13,8 @@ type RootStackParamList = {
     MapList: undefined;
     MapScreen: { imageUri: string };
 };
+
+const { width, height } = Dimensions.get('window');
 
 // MapScreen component
 const MapScreen = () => {
@@ -42,8 +44,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
     image:{
-        width: 1200,
-        height: 800,
+        width: width-20,
+        height: height-20,
+        resizeMode: 'contain',
+        borderWidth: 10,
+        borderColor: '#rgba(105, 63, 27,1)',
+        backgroundColor: '#rgba(105, 63, 27,1)',
+        borderRadius: 10,
     },
     returnButton: {
         position: 'absolute',
