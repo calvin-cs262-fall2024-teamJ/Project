@@ -4,12 +4,13 @@ import { View, PanResponder, StyleSheet, Text } from 'react-native';
 const DraggablePin = ({ initialPosition, onDragEnd, draggable }) => {
   const [position, setPosition] = useState(initialPosition);
   const [isDragging, setIsDragging] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
 
   const panResponder = PanResponder.create({
-    onStartShouldSetPanResponder: () => draggable && isHovered,
+    onStartShouldSetPanResponder: () => draggable,
     onPanResponderGrant: () => {
-      if (draggable) setIsDragging(true);
+      if (draggable) {
+        setIsDragging(true);
+      }
     },
     onPanResponderMove: (e, gestureState) => {
       if (isDragging) {
@@ -30,9 +31,7 @@ const DraggablePin = ({ initialPosition, onDragEnd, draggable }) => {
   return (
     <View
       {...panResponder.panHandlers}
-      style={[styles.pin, { top: position.y, left: position.x, backgroundColor: isDragging ? 'blue' : isHovered ? 'lightblue' : 'grey' }]}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      style={[styles.pin, { top: position.y, left: position.x, backgroundColor: isDragging ? 'blue' : 'grey' }]}
     >
       <Text style={styles.pinText}>📍</Text>
     </View>

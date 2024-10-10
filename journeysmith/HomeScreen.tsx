@@ -1,7 +1,6 @@
 import React from 'react';
 import { ImageBackground, View, Text, Pressable, StyleSheet } from 'react-native';
 
-
 function HomeScreen({ navigation }) {
   return (
     <ImageBackground

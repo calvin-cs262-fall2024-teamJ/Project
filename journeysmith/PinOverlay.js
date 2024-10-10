@@ -40,9 +40,9 @@ const PinOverlay = ({ children }) => {
     <>
       {children}
       {mode !== 'inactive' && (
-        <View style={styles.overlay}>
+        <View style={mode === 'drag' ? styles.draggingOverlay : styles.activeOverlay}>
           {pins.map((pin, index) => (
-            <TouchableOpacity key={index} onPress={() => mode === 'normal' && /* EDIT */ alert('Pin clicked!')}>
+            <TouchableOpacity key={index} onPress={() => mode === 'normal' && /* EDIT THIS */ alert('Pin clicked!')}>
               <DraggablePin
                 initialPosition={pin}
                 onDragEnd={(newPos) => handleDragEnd(index, newPos)}
@@ -68,9 +68,15 @@ const PinOverlay = ({ children }) => {
 };
 
 const styles = StyleSheet.create({
-  overlay: {
+  activeOverlay: {
     ...StyleSheet.absoluteFillObject,
     zIndex: 20,
+    pointerEvents: 'box-none', 
+  },
+  draggingOverlay: {
+    ...StyleSheet.absoluteFillObject,
+    zIndex: 20,
+    pointerEvents: 'auto',
   },
   touchArea: {
     ...StyleSheet.absoluteFillObject,
@@ -89,9 +95,6 @@ const styles = StyleSheet.create({
     color: 'yellow',
     marginTop: 10,
     fontWeight: 'bold',
-  },
-  pointerEventsAuto: {
-    pointerEvents: 'auto', // Allow interactions in place mode
   },
 });
 
