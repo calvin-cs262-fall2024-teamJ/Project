@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, TouchableWithoutFeedback, Text, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, TouchableWithoutFeedback, Text, TouchableOpacity, Pressable } from 'react-native';
 import DraggablePin from './DraggablePin';
 
 const PinOverlay = ({ children }) => {
@@ -42,7 +42,7 @@ const PinOverlay = ({ children }) => {
       {mode !== 'inactive' && (
         <View style={mode === 'drag' ? styles.draggingOverlay : styles.activeOverlay}>
           {pins.map((pin, index) => (
-            <TouchableOpacity key={index} onPress={() => mode === 'normal' && /* EDIT THIS */ alert('Pin clicked!')}>
+            <TouchableOpacity key={index} onPress={() => mode === 'normal' && /* EDIT */ alert('Pin clicked!')}>
               <DraggablePin
                 initialPosition={pin}
                 onDragEnd={(newPos) => handleDragEnd(index, newPos)}
@@ -58,6 +58,9 @@ const PinOverlay = ({ children }) => {
         </View>
       )}
       <View style={styles.infoContainer}>
+        <Pressable>
+          <Text>📍</Text>
+        </Pressable>
         <Text style={styles.infoText}>Press 'a' to toggle inactive mode</Text>
         <Text style={styles.infoText}>Press 'p' to toggle pin placement mode</Text>
         <Text style={styles.infoText}>Press 'm' to toggle pin drag mode</Text>
@@ -68,15 +71,9 @@ const PinOverlay = ({ children }) => {
 };
 
 const styles = StyleSheet.create({
-  activeOverlay: {
+  overlay: {
     ...StyleSheet.absoluteFillObject,
     zIndex: 20,
-    pointerEvents: 'box-none', 
-  },
-  draggingOverlay: {
-    ...StyleSheet.absoluteFillObject,
-    zIndex: 20,
-    pointerEvents: 'auto',
   },
   touchArea: {
     ...StyleSheet.absoluteFillObject,
@@ -95,6 +92,9 @@ const styles = StyleSheet.create({
     color: 'yellow',
     marginTop: 10,
     fontWeight: 'bold',
+  },
+  pointerEventsAuto: {
+    pointerEvents: 'auto', // Allow interactions in place mode
   },
 });
 

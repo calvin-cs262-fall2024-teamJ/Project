@@ -6,25 +6,26 @@ import MapScreen from './MapScreen';
 import PinOverlay from './PinOverlay';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
-        <Stack.Screen name="MapList" component={MapListWithOverlay} options={{ headerShown: false }} />
-        <Stack.Screen name="MapScreen" component={MapScreen} options={{ headerShown: false }} />
-      </Stack.Navigator>
-      <StatusBar style="auto" />
-    </NavigationContainer>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Home">
+          <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+          <Stack.Screen name="MapList" component={MapList} options={{ headerShown: false }} />
+          <Stack.Screen name="MapScreen" component={MapScreenWithOverlay} options={{ headerShown: false }} />
+        </Stack.Navigator>
+        <StatusBar style="auto" />
+      </NavigationContainer>
   );
 };
 
-const MapListWithOverlay = (props) => (
+const MapScreenWithOverlay = (props) => (
   <View style={{ flex: 1 }}>
-    <MapList {...props} />
+    <MapScreen {...props} />
     <PinOverlay />
   </View>
 );
