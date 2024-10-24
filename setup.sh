@@ -7,3 +7,4 @@ npm install react-native-screens react-native-safe-area-context
 npm install @react-navigation/native-stack
 npx expo install expo-image-picker
 npm install expo-status-bar
+npm install react-native-gesture-handler react-native-reanimated react-native-zoomable-view

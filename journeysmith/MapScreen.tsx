@@ -1,9 +1,11 @@
 import React from 'react';
-import {View, Image, StyleSheet, Pressable, Text} from 'react-native';
-import {useRoute, RouteProp, useNavigation, NavigationProp} from '@react-navigation/native';
+import { View, Image, StyleSheet, Pressable, Text, Dimensions } from 'react-native';
+import { useRoute, RouteProp, useNavigation, NavigationProp } from '@react-navigation/native';
+import { GestureHandlerRootView, PanGestureHandler } from 'react-native-gesture-handler';
+import Animated, { useAnimatedGestureHandler, useAnimatedStyle, useSharedValue} from 'react-native-reanimated';
 
-type RouteParams={
-    params:{
+type RouteParams = {
+    params: {
         imageUri: string;
     };
 };
@@ -14,6 +16,8 @@ type RootStackParamList = {
     MapScreen: { imageUri: string };
 };
 
+const { width, height } = Dimensions.get('window');
+
 // MapScreen component
 const MapScreen = () => {
     const route = useRoute<RouteProp<RouteParams, 'params'>>();
@@ -22,10 +26,13 @@ const MapScreen = () => {
 
     console.log('Received imageUri:', imageUri); // For debugging
 
+    const pinX = useSharedValue(50);
+    const pinY = useSharedValue(50);
+
     return (
         <View style={styles.container}>
             {imageUri ? (
-                <Image source={{ uri: imageUri }} style={styles.image} />
+                    <Image source={{ uri: imageUri }} style={styles.image} />
             ) : null}
             <Pressable style={styles.returnButton} onPress={() => navigation.goBack()}>
                 <Text style={styles.returnButtonText}>Return to map list</Text>
@@ -36,25 +43,41 @@ const MapScreen = () => {
 
 // Styles for the map component
 const styles = StyleSheet.create({
-    container:{
-        flex:1,
+    container: {
+        flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        backgroundColor: '#rgba(105, 63, 27,1)',
     },
-    image:{
-        width: 1200,
-        height: 800,
+    image: {
+        width: width - 20,
+        height: height - 20,
+        resizeMode: 'contain',
+        borderColor: '#rgba(105, 63, 27,1)',
+        backgroundColor: '#rgba(105, 63, 27,1)',
+        borderRadius: 10,
     },
     returnButton: {
         position: 'absolute',
         top: 10,
-        left: 10,
+        right: 10,
         padding: 10,
-        backgroundColor: '#fff',
-      },
-      returnButtonText: {
+        backgroundColor: '#rgba(245, 245, 220, 1)',
+        borderRadius: 10,
+    },
+    returnButtonText: {
         color: '#000',
-      },
+    },
+    pinButton: {
+        backgroundColor: '#rgba(245, 245, 220, 1)',
+        width: 10,
+        height: 10,
+        borderRadius: 5,
+        borderColor: '#rgba(245, 245, 220, 1)',
+    },
+    zoomableView: {
+
+    },
 });
 
 export default MapScreen;
