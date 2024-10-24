@@ -51,9 +51,9 @@ const PinOverlay = ({ children }) => {
             </TouchableOpacity>
           ))}
           {mode === 'place' && (
-            <TouchableWithoutFeedback onPress={handlePress}>
+            <Pressable onPress={handlePress}>
               <View style={styles.touchArea} />
-            </TouchableWithoutFeedback>
+            </Pressable>
           )}
         </View>
       )}
