@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { View, StyleSheet, TouchableWithoutFeedback, Text, TouchableOpacity, Pressable } from 'react-native';
+import { View, StyleSheet, TouchableWithoutFeedback, Text, TouchableOpacity } from 'react-native';
 import DraggablePin from './DraggablePin';
 
 const PinOverlay = ({ children }) => {
   const [pins, setPins] = useState([]);
-  const [mode, setMode] = useState('inactive'); // 'inactive', 'normal', 'place', 'drag' 
+  const [mode, setMode] = useState('inactive'); // 'inactive', 'normal', 'place', 'drag'
 
   useEffect(() => {
-    const handleKeyPress = (event) => {
-      if (event.key === 'a') {
+    const handleKeyPress = (e) => {
+      if (e.key === 'a') {
         setMode((prevMode) => (prevMode === 'inactive' ? 'normal' : 'inactive'));
-      } else if (event.key === 'p') {
+      } else if (e.key === 'p') {
         setMode((prevMode) => (prevMode === 'place' ? 'normal' : 'place'));
-      } else if (event.key === 'm') {
+      } else if (e.key === 'm') {
         setMode((prevMode) => (prevMode === 'drag' ? 'normal' : 'drag'));
       }
     };
@@ -24,9 +24,9 @@ const PinOverlay = ({ children }) => {
     };
   }, []);
 
-  const handlePress = (event) => {
+  const handlePress = (e) => {
     if (mode !== 'place') return;
-    const { pageX, pageY } = event.nativeEvent;
+    const { pageX, pageY } = e.nativeEvent;
     setPins([...pins, { x: pageX, y: pageY }]);
   };
 
@@ -42,7 +42,7 @@ const PinOverlay = ({ children }) => {
       {mode !== 'inactive' && (
         <View style={mode === 'drag' ? styles.draggingOverlay : styles.activeOverlay}>
           {pins.map((pin, index) => (
-            <TouchableOpacity key={index} onPress={() => mode === 'normal' && /* EDIT */ alert('Pin clicked!')}>
+            <TouchableOpacity key={index} onPress={() => mode === 'normal' && /* EDIT THIS */ alert('Pin clicked!')}>
               <DraggablePin
                 initialPosition={pin}
                 onDragEnd={(newPos) => handleDragEnd(index, newPos)}
@@ -51,16 +51,13 @@ const PinOverlay = ({ children }) => {
             </TouchableOpacity>
           ))}
           {mode === 'place' && (
-            <Pressable onPress={handlePress}>
+            <TouchableWithoutFeedback onPress={handlePress}>
               <View style={styles.touchArea} />
-            </Pressable>
+            </TouchableWithoutFeedback>
           )}
         </View>
       )}
       <View style={styles.infoContainer}>
-        <Pressable>
-          <Text>📍</Text>
-        </Pressable>
         <Text style={styles.infoText}>Press 'a' to toggle inactive mode</Text>
         <Text style={styles.infoText}>Press 'p' to toggle pin placement mode</Text>
         <Text style={styles.infoText}>Press 'm' to toggle pin drag mode</Text>
@@ -71,9 +68,15 @@ const PinOverlay = ({ children }) => {
 };
 
 const styles = StyleSheet.create({
-  overlay: {
+  activeOverlay: {
     ...StyleSheet.absoluteFillObject,
     zIndex: 20,
+    pointerEvents: 'box-none', 
+  },
+  draggingOverlay: {
+    ...StyleSheet.absoluteFillObject,
+    zIndex: 20,
+    pointerEvents: 'auto',
   },
   touchArea: {
     ...StyleSheet.absoluteFillObject,
@@ -92,9 +95,6 @@ const styles = StyleSheet.create({
     color: 'yellow',
     marginTop: 10,
     fontWeight: 'bold',
-  },
-  pointerEventsAuto: {
-    pointerEvents: 'auto', // Allow interactions in place mode
   },
 });
 
