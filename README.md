@@ -6,3 +6,5 @@ Unlike DnD Beyond or World Anvil, which have complicated user interfaces and are
  
 Team Members:
 Luke de Vries, Noro Dung, William Elsen, Saron Melesse, Nathan Schultz, Chase Velloney
+
+The code implementation can be found in the Client(https://github.com/calvin-cs262-fall2024-teamJ/Client) and Service(https://github.com/calvin-cs262-fall2024-teamJ/Service) repositories
