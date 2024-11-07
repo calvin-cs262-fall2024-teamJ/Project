@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { View, PanResponder, StyleSheet, Text } from 'react-native';
+import { View, PanResponder, StyleSheet, Text, TouchableOpacity } from 'react-native';
 
-const DraggablePin = ({ initialPosition, onDragEnd, draggable }) => {
+const DraggablePin = ({ initialPosition, onDragEnd, draggable, onPress }) => {
   const [position, setPosition] = useState(initialPosition);
   const [isDragging, setIsDragging] = useState(false);
 
@@ -29,27 +29,38 @@ const DraggablePin = ({ initialPosition, onDragEnd, draggable }) => {
   });
 
   return (
-    <View
-      {...panResponder.panHandlers}
-      style={[styles.pin, { top: position.y, left: position.x, backgroundColor: isDragging ? 'blue' : 'grey' }]}
-    >
-      <Text style={styles.pinText}>📍</Text>
-    </View>
+    <TouchableOpacity onPress={onPress}>
+      <View
+        {...panResponder.panHandlers}
+        style={[styles.pinContainer, { top: position.y, left: position.x }]}
+      >
+        <View style={styles.pin}>
+          <Text style={styles.pinText}>📍</Text>
+        </View>
+      </View>
+    </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
-  pin: {
+  pinContainer: {
     position: 'absolute',
-    width: 30,
-    height: 30,
+    width: 60, // Double the original size for easier dragging
+    height: 60, // Double the original size for easier dragging
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'transparent',
+  },
+  pin: {
+    width: 30, // Original pin size
+    height: 30, // Original pin size
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 15, // Make it circular
   },
   pinText: {
     fontSize: 24,
-    color: 'white',
+    color: 'grey',
   },
 });
 
