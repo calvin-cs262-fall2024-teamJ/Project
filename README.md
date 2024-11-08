@@ -1,4 +1,4 @@
-# Sprint 3 Vision Statement
+# The future of worldbuilding
 
 Dungeon masters (DMs) need an efficient way to organize their world’s information for smooth Dungeons and Dragons gameplay. Keeping track of storylines, characters, locations, and rules can be challenging on paper, so the Journeysmith app addresses this by providing easy access to information to help DMs manage information overload. It allows DMs to upload maps, add pins linked to relevant details, and keep notes on stories and characters. With this system, DMs can quickly find information about different regions and points of interest when needed based on their own style of keeping notes.
 
