@@ -7,7 +7,7 @@ Unlike DnD Beyond or World Anvil, which have complicated user interfaces and are
 Team Members:
 Luke de Vries, Noro Dung, William Elsen, Saron Melesse, Nathan Schultz, Chase Velloney
 
-[Design Models]([url](https://github.com/calvin-cs262-fall2024-teamJ/Project/blob/Organizing-project-repo-and-adding-proper-links-to-read.md/design.md))
+[Design Models](https://github.com/calvin-cs262-fall2024-teamJ/Project/blob/Organizing-project-repo-and-adding-proper-links-to-read.md/design.md)
 
 [Presentation Material ]([url](https://github.com/calvin-cs262-fall2024-teamJ/Project/blob/Organizing-project-repo-and-adding-proper-links-to-read.md/presentations/Journeysmith%20First%20Presentation.pptx))
 
