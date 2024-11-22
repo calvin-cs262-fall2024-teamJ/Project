@@ -11,4 +11,4 @@ Luke de Vries, Noro Dung, William Elsen, Saron Melesse, Nathan Schultz, Chase Ve
 
 [Presentation Material ](https://github.com/calvin-cs262-fall2024-teamJ/Project/blob/Organizing-project-repo-and-adding-proper-links-to-read.md/presentations/Journeysmith%20First%20Presentation.pptx)
 
-The code implementation can be found in the [Client](https://github.com/calvin-cs262-fall2024-teamJ/Client) and [Service](https://github.com/calvin-cs262-fall2024-teamJ/Service) repositories
+The code implementation can be found in the [Mobile-Client](https://github.com/calvin-cs262-fall2024-teamJ/Client) and [Web-Service](https://github.com/calvin-cs262-fall2024-teamJ/Service) repositories
