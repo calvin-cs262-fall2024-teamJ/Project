@@ -9,6 +9,6 @@ Luke de Vries, Noro Dung, William Elsen, Saron Melesse, Nathan Schultz, Chase Ve
 
 [Design Models](https://github.com/calvin-cs262-fall2024-teamJ/Project/blob/Organizing-project-repo-and-adding-proper-links-to-read.md/design.md)
 
-[Presentation Material ]([url](https://github.com/calvin-cs262-fall2024-teamJ/Project/blob/Organizing-project-repo-and-adding-proper-links-to-read.md/presentations/Journeysmith%20First%20Presentation.pptx))
+[Presentation Material ](https://github.com/calvin-cs262-fall2024-teamJ/Project/blob/Organizing-project-repo-and-adding-proper-links-to-read.md/presentations/Journeysmith%20First%20Presentation.pptx)
 
-The code implementation can be found in the [Client]([url](https://github.com/calvin-cs262-fall2024-teamJ/Client)) and [Service]([url](https://github.com/calvin-cs262-fall2024-teamJ/Service)) repositories
+The code implementation can be found in the [Client](https://github.com/calvin-cs262-fall2024-teamJ/Client) and [Service](https://github.com/calvin-cs262-fall2024-teamJ/Service) repositories
